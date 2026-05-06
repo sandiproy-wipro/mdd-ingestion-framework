@@ -1,19 +1,18 @@
-MDD Ingestion Framework
+**MDD Ingestion Framework**
 
- 
 A metadata driven ingestion framework for onboarding batch data feeds into Databricks Unity Catalog using a configuration first, no code-per-dataset approach.
 Designed for enterprise scale ingestion with strong governance, auditability, and repeatability.
 
-✨ Why this framework?
+**✨ Why this framework?**
 Traditional ingestion pipelines require custom code per feed, making them expensive to scale.
 This framework enables:
-•	✅ Zero code per dataset (metadata only)
-•	✅ Consistent validation + quarantine
-•	✅ Built in audit, error tracking, and idempotency
-•	✅ Standardized Landing → Bronze/Silver pattern
-•	✅ Designed for Databricks Unity Catalog
+✅ Zero code per dataset (metadata only)
+✅ Consistent validation + quarantine
+✅ Built in audit, error tracking, and idempotency
+✅ Standardized Landing → Bronze/Silver pattern
+✅ Designed for Databricks Unity Catalog
 
-🚀 Key Features
+**🚀 Key Features**
 •	Metadata driven ingestion 
 o	One JSON config per dataset
 o	Add new feeds without writing Spark code
@@ -57,14 +56,14 @@ o	Spark, Delta, Unity Catalog, dbutils
 │  • Audit / Error / File Registry         │
 └─────────────────────────────────────────┘
 
-📂 Repository Contents
+**📂 Repository Contents**
 File	Purpose
 metadata_setup_utility.py	Metadata contract, examples, UC table setup
 ingestion_engine.py	Core ingestion runner
 docs/	Architecture + screenshots (recommended)
 metadata/	Sample dataset configs (recommended)
 
-⚙️ Prerequisites
+**⚙️ Prerequisites**
 •	Databricks workspace with Unity Catalog enabled
 •	UC Volumes for: 
 o	metadata/
@@ -72,7 +71,7 @@ o	landing/
 o	archive/ (optional)
 •	Databricks Runtime (Spark 3.x)
 
-🏃 Quick Start
+**🏃 Quick Start**
 1️⃣ Setup metadata & system tables
 Run:
 Plain Text
@@ -100,7 +99,7 @@ Using widgets:
 •	dataset: dataset name (if ONE)
 •	archive: YES / NO
 
-🔍 Observability & Governance
+**🔍 Observability & Governance**
 Audit Table
 Tracks:
 •	Dataset
@@ -115,7 +114,7 @@ File Registry
 •	Prevents duplicate processing
 •	Enables idempotent ingestion
 
-🧪 Validation & Quarantine
+**🧪 Validation & Quarantine**
 Supported validation rules:
 •	not_null
 •	regex
@@ -127,7 +126,7 @@ Invalid rows:
 •	Are written to a quarantine Delta table
 •	Include failure reason(s)
 
-❓ FAQ
+**❓ FAQ**
 Q: Is streaming supported?
 ❌ No. This framework is batch only by design.
 Q: Does this support non UC paths (DBFS / S3 directly)?
@@ -140,7 +139,7 @@ Q: What happens if schema changes?
 •	Ingestion will fail validation
 •	Records may be quarantined
 •	Schema evolution can be enabled in Delta if desired (extendable)
-🛠 Troubleshooting
+**🛠 Troubleshooting**
 Issue: No data ingested
 •	Check: 
 o	Landing path correctness
@@ -157,7 +156,7 @@ o	Correct catalog/schema in metadata
 o	Tables created by setup notebook
 o	UC permissions granted
 
-🧭 Roadmap (suggested)
+**🧭 Roadmap**
 •	✅ Modular validation engine
 •	✅ SCD2 / MERGE support
 •	✅ Schema drift handling
