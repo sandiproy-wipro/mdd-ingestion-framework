@@ -63,7 +63,7 @@ This framework enables:
 | `metadata_setup_utility.py` | Defines metadata contract and creates Unity Catalog system tables |
 | `ingestion_engine.py` | Core, generic metadata‑driven ingestion runner |
 | `metadata/` | Sample dataset configuration JSON files |
-| `docs/` | Architecture diagrams and screenshots |
+| `samples/` | Sample feeds |
 
 
 
