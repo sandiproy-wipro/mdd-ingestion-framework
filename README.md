@@ -58,36 +58,6 @@ This framework enables:
 
 ---
 
-## 🧩 Architecture
-
-```text
-
-┌─────────────┐
-│ Landing     │  (Unity Catalog Volume)
-│ Files       │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Ingestion Engine    │
-│  • Read             │
-│  • Validate         │
-│  • Quarantine       │
-│  • Audit            │
-└──────┬──────────────┘
-       │
-       ▼
-┌─────────────────────────────────────────┐
-│ Delta Tables (Unity Catalog)             │
-│  • Bronze                                │
-│  • Silver                                │
-│  • Quarantine                            │
-│  • Audit / Error / File Registry         │
-└─────────────────────────────────────────┘
-
-
----
-
 ## 📂 Repository Contents
 
 | File / Folder | Purpose |
@@ -242,3 +212,34 @@ Ensure:
 
 **License / Usage**  
 Internal – General Use
+
+## 🧩 Architecture
+
+```text
+
+┌─────────────┐
+│ Landing     │  (Unity Catalog Volume)
+│ Files       │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────┐
+│ Ingestion Engine    │
+│  • Read             │
+│  • Validate         │
+│  • Quarantine       │
+│  • Audit            │
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────────────────────────┐
+│ Delta Tables (Unity Catalog)             │
+│  • Bronze                                │
+│  • Silver                                │
+│  • Quarantine                            │
+│  • Audit / Error / File Registry         │
+└─────────────────────────────────────────┘
+
+
+---
+
