@@ -4,7 +4,6 @@ A **metadata-driven ingestion framework** for onboarding **batch data feeds** in
 
 Designed for **enterprise-scale ingestion** with strong **governance, auditability, and repeatability**.
 
----
 
 ## ✨ Why This Framework?
 
@@ -18,7 +17,6 @@ This framework enables:
 - ✅ Standardised **Landing → Bronze → Silver** pattern
 - ✅ Native design for **Databricks Unity Catalog**
 
----
 
 ## 🚀 Key Features
 
@@ -52,7 +50,6 @@ This framework enables:
 - Unity Catalog
 - dbutils
 
----
 
 ## 🧩 Architecture
 
