@@ -6,7 +6,7 @@ A **metadata‑driven ingestion framework** for onboarding **batch data feeds** 
 
 Designed for **enterprise‑scale ingestion** with strong **governance, auditability, repeatability, and operational consistency**.
 
----
+
 
 ## ✨ Why This Framework?
 
@@ -20,7 +20,7 @@ This framework enables:
 - ✅ Standardised **Landing → Bronze → Silver** ingestion pattern
 - ✅ Native support for **Databricks Unity Catalog**
 
----
+
 
 ## 🚀 Key Features
 
@@ -56,18 +56,18 @@ This framework enables:
 - Unity Catalog
 - `dbutils`
 
----
+
 
 ## 📂 Repository Contents
 
 | File / Folder | Purpose |
-|--------------|--------|
+|--|--|
 | `metadata_setup_utility.py` | Defines metadata contract and creates Unity Catalog system tables |
 | `ingestion_engine.py` | Core, generic metadata‑driven ingestion runner |
 | `metadata/` | Sample dataset configuration JSON files |
 | `docs/` | Architecture diagrams and screenshots |
 
----
+
 
 ## ⚙️ Prerequisites
 
@@ -78,47 +78,28 @@ This framework enables:
   - `archive/` *(optional)*
 - Databricks Runtime with **Spark 3.x**
 
----
+
 
 ## 🏃 Quick Start
 
 ### 1️⃣ Setup Metadata & System Tables
 
-Run the setup utility:
+Run the setup utility metadata_setup_utility.py
 
-```bash
-python metadata_setup_utility.py
+This action defines the metadata JSON contract and creates system tables viz. ingestion_audit, ingestion_errors & ingestion_file_registry
 
-This action:
+### 2️⃣ Add a Dataset (No Code)
+Create a dataset metadata file under `/Volumes/<catalog>/<schema>/<volume>/metadata/<dataset>.json`
 
-Defines the metadata JSON contract
-Creates system tables:
+Supported dataset formats Delimited, Fixed‑length & JSON
 
-ingestion_audit
-ingestion_errors
-ingestion_file_registry
-2️⃣ Add a Dataset (No Code)
-Create a dataset metadata file under:
-/Volumes/<catalog>/<schema>/<volume>/metadata/<dataset>.json
-Supported dataset formats
-
-Delimited
-Fixed‑length
-JSON
-3️⃣ Run Ingestion
-Execute 
-python ingestion_engine.py
-Using widgets
-
-mode : ALL or ONE
-dataset : Dataset name (required when mode = ONE)
-archive : YES / NO
-
+### 3️⃣ Run Ingestion
+Execute ingestion_engine.py using widgets
 
 
 # Observability, Validation & Governance
 
----
+
 
 ## 🔍 Observability & Governance
 
@@ -139,7 +120,7 @@ Stores:
 - Enables safe re‑runs
 - Ensures idempotent ingestion behaviour
 
----
+
 
 ## 🧪 Validation & Quarantine
 
@@ -155,7 +136,7 @@ Stores:
 - Written to a dedicated quarantine Delta table
 - Validation failure reasons captured at row level
 
----
+
 
 ## ❓ FAQ
 
@@ -176,7 +157,7 @@ Stores:
 - Records may be quarantined
 - Schema evolution can be enabled in Delta as an extension
 
----
+
 
 ## 🛠 Troubleshooting
 
@@ -198,7 +179,7 @@ Ensure:
 - System tables were created successfully
 - Unity Catalog permissions are granted
 
----
+
 
 ## 🧭 Roadmap
 
@@ -208,10 +189,8 @@ Ensure:
 - ✅ Orchestration via Databricks Jobs / Airflow
 - 🔮 AI‑assisted metadata generation
 
----
 
-**License / Usage**  
-Internal – General Use
+
 
 ## 🧩 Architecture
 
@@ -241,5 +220,5 @@ Internal – General Use
 └─────────────────────────────────────────┘
 
 
----
+
 
