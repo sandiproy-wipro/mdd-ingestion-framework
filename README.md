@@ -1,7 +1,5 @@
 # Metadata‑Driven Batch Ingestion Framework for Databricks
 
-# MDD Ingestion Framework
-
 A **metadata‑driven ingestion framework** for onboarding **batch data feeds** into **Databricks Unity Catalog**, using a **configuration‑first, no‑code‑per‑dataset** approach.
 
 Designed for **enterprise‑scale ingestion** with strong **governance, auditability, repeatability, and operational consistency**.
