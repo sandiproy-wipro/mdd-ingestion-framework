@@ -4,6 +4,7 @@ A metadata driven ingestion framework for onboarding batch data feeds into Datab
 Designed for enterprise scale ingestion with strong governance, auditability, and repeatability.
 
 **✨ Why this framework?**
+
 Traditional ingestion pipelines require custom code per feed, making them expensive to scale.
 This framework enables:
 ✅ Zero code per dataset (metadata only)
