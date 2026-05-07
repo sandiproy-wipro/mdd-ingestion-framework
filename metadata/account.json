@@ -1,0 +1,61 @@
+{
+  "dataset": "account",
+  "file_format": "fixed",
+  "landing_path": "/Volumes/wdfe/mgmt/root/landing/account/",
+  "archive_path": "/Volumes/wdfe/mgmt/root/archive/account/",
+  "target": {
+    "catalog": "samplecatalog",
+    "schema": "sampleschema",
+    "bronze_table": "account_bronze",
+    "silver_table": "account_silver",
+    "quarantine_table": "account_quarantine"
+  },
+  "fixed_layout": [
+    {
+      "name": "account_id",
+      "start": 1,
+      "length": 10,
+      "type": "string",
+      "nullable": false,
+      "trim": true
+    },
+    {
+      "name": "status",
+      "start": 11,
+      "length": 1,
+      "type": "string",
+      "nullable": false,
+      "trim": true
+    },
+    {
+      "name": "balance",
+      "start": 12,
+      "length": 12,
+      "type": "decimal(18,2)",
+      "nullable": true,
+      "trim": true
+    },
+    {
+      "name": "as_of_date",
+      "start": 24,
+      "length": 8,
+      "type": "date",
+      "nullable": true,
+      "format": "yyyyMMdd",
+      "trim": true
+    }
+  ],
+  "validations": [
+    {
+      "col": "status",
+      "rule": "in",
+      "values": [
+        "A",
+        "I"
+      ]
+    }
+  ],
+  "ingestion": {
+    "write_mode": "append"
+  }
+}

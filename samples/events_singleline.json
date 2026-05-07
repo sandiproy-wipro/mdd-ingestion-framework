@@ -1,0 +1,7 @@
+{"event_id": "E1001", "event_type": "customer_created", "event_ts": "2026-05-01T10:15:00Z", "payload": "{\"customer_id\":\"C0001\"}"}
+{"event_id": "E1002", "event_type": "balance_updated", "event_ts": "2026-05-02T09:00:10Z", "payload": "{\"account_id\":\"ACC0000002\",\"delta\":\"-12.35\"}"}
+{"event_id": "E1003", "event_type": "heartbeat", "event_ts": null, "payload": null}
+{"event_id": null, "event_type": "customer_created", "event_ts": "2026-05-03T01:02:03Z", "payload": "{}"}
+{"event_id": "E1005", "event_type": null, "event_ts": "2026-05-03T01:02:03Z", "payload": "{}"}
+{"event_id": "E1006", "event_type": "bad_ts", "event_ts": "not-a-timestamp", "payload": "{}"}
+{"event_type": "missing_id", "event_ts": "2026-05-04T00:00:00Z", "payload": "{}"}

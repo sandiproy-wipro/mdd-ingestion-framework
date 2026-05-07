@@ -1,0 +1,8 @@
+customer_id,name,email,age,created_ts
+C0001,Asha Sen,asha.sen@example.com,29,2026-05-01 10:15:00
+C0002,Rohit Das,,41,2026-05-02 08:05:31
+C0003,Meera Iyer,meera.iyer@example.com,,
+,Kunal Roy,kunal.roy@example.com,33,2026-05-03 11:00:00
+C0005,,no.name@example.com,22,2026-05-03 12:00:00
+C0006,Priya Nair,priya.nair@example.com,twenty,2026-05-03 13:00:00
+C0007,Arjun Gupta,arjun.gupta@example.com,27,bad-timestamp

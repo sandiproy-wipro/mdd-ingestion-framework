@@ -1,0 +1,49 @@
+{
+  "dataset": "events",
+  "file_format": "json",
+  "landing_path": "/Volumes/wdfe/mgmt/root/landing/events/",
+  "archive_path": "/Volumes/wdfe/mgmt/root/archive/events/",
+  "multiline": false,
+  "target": {
+    "catalog": "samplecatalog",
+    "schema": "sampleschema",
+    "bronze_table": "events_bronze",
+    "silver_table": "events_silver",
+    "quarantine_table": "events_quarantine"
+  },
+  "schema": [
+    {
+      "name": "event_id",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "event_type",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "event_ts",
+      "type": "timestamp",
+      "nullable": true
+    },
+    {
+      "name": "payload",
+      "type": "string",
+      "nullable": true
+    }
+  ],
+  "validations": [
+    {
+      "col": "event_id",
+      "rule": "not_null"
+    },
+    {
+      "col": "event_type",
+      "rule": "not_null"
+    }
+  ],
+  "ingestion": {
+    "write_mode": "append"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "dataset": "customer",
+  "file_format": "delimited",
+  "landing_path": "/Volumes/wdfe/mgmt/root/landing/customer/",
+  "archive_path": "/Volumes/wdfe/mgmt/root/archive/customer/",
+  "delimiter": ",",
+  "header": true,
+  "encoding": "UTF-8",
+  "multiline": false,
+  "mode": "PERMISSIVE",
+  "target": {
+    "catalog": "samplecatalog",
+    "schema": "sampleschema",
+    "bronze_table": "customer_bronze",
+    "silver_table": "customer_silver",
+    "quarantine_table": "customer_quarantine"
+  },
+  "schema": [
+    {
+      "name": "customer_id",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "age",
+      "type": "int",
+      "nullable": true
+    },
+    {
+      "name": "created_ts",
+      "type": "timestamp",
+      "nullable": true
+    }
+  ],
+  "validations": [
+    {
+      "col": "email",
+      "rule": "regex",
+      "pattern": "^[^@]+@[^@]+\\.[^@]+$",
+      "when_not_null": true
+    },
+    {
+      "col": "age",
+      "rule": "range",
+      "min": 0,
+      "max": 120,
+      "when_not_null": true
+    }
+  ],
+  "ingestion": {
+    "write_mode": "append",
+    "dedup_keys": [
+      "customer_id"
+    ],
+    "dedup_order_col": "created_ts"
+  }
+}
